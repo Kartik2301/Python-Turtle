@@ -1,0 +1,29 @@
+from turtle import  Turtle
+STARTING_POSITION = (0, -280)
+MOVE_DISTANCE = 10
+FINISH_LINE_Y = 280
+
+
+class Player(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.shape("turtle")
+        self.color("red")
+        self.penup()
+        self.setheading(90)
+        self.goto(STARTING_POSITION)
+
+    def up(self):
+        self.goto(self.xcor(), self.ycor()+10)
+
+    def down(self):
+        self.goto(self.xcor(), self.ycor()-10)
+
+    def right(self):
+        self.goto(self.xcor()+10, self.ycor())
+
+    def left(self):
+        self.goto(self.xcor()-10, self.ycor())
+
+    def refresh(self):
+        self.goto(self.xcor(), -280)
